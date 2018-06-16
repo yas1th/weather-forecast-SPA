@@ -1,1 +1,18 @@
+<p>
+    <a href="#!">Back to search</a>
+</p>
+
 forecast city is {{city}}
+<hr/>
+Days : <a href="#!forecast/2" ng-class="{'bg-default':days === '2'}">2</a> | 
+       <a href='#!forecast/5' ng-class="{'bg-default' : days === '5'}">5</a> | 
+       <a href='#!forecast/7' ng-class="{'bg-default' : days === '7'}">7</a>
+
+<div ng-repeat="w in weatherData.list" ng-controller='forecastController'>
+    <div class="row">
+        <div class="col-md-12">
+            <weather-report weather-day='w' convert-to-standard='convertToCentigrade(daytimeTemp)'
+            convert-to-date='convertToDate(dt)' day-format='MMM d, y'></weather-report>
+        </div>
+    </div>
+</div>
